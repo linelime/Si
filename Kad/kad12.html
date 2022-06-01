@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>追加課題5.5.12</title>
+        <h1>8クイーン</h1>      
+    </head>
+    <body> 
+        8Queenのすべての答え<br>
+
+        <script>
+            let n = 8; 
+            solve();
+            ///出力
+            function printSol(board){
+                for(let i=0; i<n; i++){
+                    for(let j=0; j<n; j++){
+                    document.write(" "+board[i][j]+" ");
+                    }
+                    document.write("<br>");
+                }
+                document.write("<br>");
+            }
+            ///範囲をかぶったらFalse
+            function isSafe(board, row, col){
+                ///←　確認    
+                for(let i=0; i<col; i++){
+                    if (board[row][i] === 1) {
+                    return false;
+                    }
+                }
+                ///↖　確認 
+                for(let i=row, j=col; i>=0 && j>=0; i--, j--){
+                    if (board[i][j] === 1) {
+                    return false;
+                    }
+                }
+                ///↙　確認
+                for(let i=row, j=col; j>=0 && i<n; i++, j--){
+                    if (board[i][j] === 1){
+                    return false;
+                    }
+                }
+                return true;
+            }
+            function recurse(board, col){
+                if(col===n){
+                    printSol(board);　//<-- 違う答えを出力
+                    return;  
+                }
+                
+                for(let i=0; i<n; i++){
+                    if(isSafe(board, i, col)){
+                        board[i][col]=1;　//Queenがあったら１なかったたら１
+                        recurse(board, col+1);
+                        board[i][col]=0;
+                    }   
+                }
+                return false;
+            }
+            function solve(){
+                let board = generateBoard(n);
+                recurse(board, 0);
+            }
+            ///8の場合は答え92個
+            function generateBoard(n){ ///n個のボードを作る
+                let board=[];
+                for(let i=0; i<n; i++){
+                    board[i]=[];
+                    for(let j=0; j<n; j++){
+                    board[i][j]=0;
+                    }
+                }
+                return board;
+            }
+        </script>   
+    </body>
+</html>

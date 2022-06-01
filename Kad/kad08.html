@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>追加課題5.5.10</title>
+        <h1>西歴計算機</h1>      
+    </head>
+    <body>
+        <input type="number" id="year">
+        <button value="入力" onclick="keisan()">入力</button><br>
+        <p id="text"></p>
+        <script>          
+            function keisan(){
+            let year = document.getElementById("year").value;
+            
+                if( (year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ){
+                    text.innerHTML = "閏年";
+                }
+                else{
+                    text.innerHTML = "平年";
+                }
+            }
+
+        </script>   
+    </body>
+</html>

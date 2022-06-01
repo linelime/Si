@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>課題5.5.4２つの数字</title>      
+    </head>
+    <body>
+        <p>数字だけ入力してください。</p>        
+        <input type="number" id="n1"><br>
+        <input type="number" id="n2">
+        <button onclick="display()">実行</button>
+        <p id="result"></p>
+
+        <script>
+            function display(){                
+                var n1 = parseInt(document.getElementById("n1").value);
+                var n2 = parseInt(document.getElementById("n2").value);
+                if(n1>n2){
+                    n3 = n1-n2;
+                }else{
+                    n3 = n2-n1;
+                }
+                document.getElementById("result").innerHTML = n3;
+            }
+        </script>  
+    </body>
+</html>

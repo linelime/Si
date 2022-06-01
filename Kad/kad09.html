@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>追加課題5.5.9</title>      
+    </head>
+    <body> 
+        <h1>数字を入力してください</h1><br>
+        <input type = "number" id="n"><input type="number" id="m"><button onclick="display()">実行</button>
+        <p id="result"></p>
+        <script>
+            function display(){
+                let n = document.getElementById("n").value;
+                let m = document.getElementById("m").value;
+                result.innerHTML = Math.pow(n,m);
+            }
+        </script>   
+    </body>
+</html>

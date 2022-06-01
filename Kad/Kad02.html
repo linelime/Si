@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+     <meta charset="UTF-8">
+     <title>課題5.5.2整数の判定</title>      
+    </head>
+    <body> 
+        <p>数字を入力してください</p>
+        <input type="number", id="input">
+        <button type="button", onclick="hantei()">判定</button>
+        <p id="answer"></p>
+        <script>
+           
+            function hantei(){
+                let input = document.getElementById("input").value;
+                let answer;
+            
+                if(input % 2 ==0){
+                    answer =  "偶数"
+                }else{
+                    answer =  "奇数"
+                }
+                document.getElementById("answer").innerHTML = answer;
+            }
+        </script>   
+    </body>
+</html>

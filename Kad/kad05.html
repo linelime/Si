@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>課題5.5.5</title>      
+    </head>
+    <body>
+        <p id="result"></p> 
+        <script>
+            let array = [3, 4, 973, 63, 999];
+            let result = "";
+            array.sort(function(a, b){
+                return b - a;
+            });
+
+            function display(){
+                for(let i=0; i < array.length; i++){
+                    result += array[i]+" ";
+                }       
+                document.getElementById("result").innerHTML = "大きい順番は "+result;
+            }
+            display();
+        </script>   
+    </body>
+</html>
